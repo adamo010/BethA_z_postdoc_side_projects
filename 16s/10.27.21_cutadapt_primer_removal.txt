@@ -1,0 +1,42 @@
+#borrowing this from https://astrobiomike.github.io/amplicon/dada2_workflow_ex
+
+#for this project, all files are named samplename_R1_001.fastq.gz or samplename_R2_001_fastq.gz
+
+#which is cool because it means the first thing we have to do is make a list of file names
+
+#first, need to make a list of sample names called (helpfully) "samples"
+
+#ls *_R1_001.fastq.gz | cut -f1 -d "_" > samples
+#this is how you'd do it if you have a useful delimiter between the sample name and the _fastq.gz component of your file name
+#I, of course, have _ throughout the file name, so can't use this code. But theoretically, one could.
+#anyway, I made a file called 'samples' that has all the sample names. Each sample name has both a fwd (R1) and rev (R2) fastq file.
+#and now the below code should trim all those files.  
+
+
+for sample in $(cat samples)
+do
+
+    echo "On sample: $sample"
+    
+    cutadapt -a ^GTGCCAGCMGCCGCGGTAA...ATTAGAWACCCBDGTAGTCC \
+    -A ^GGACTACHVGGGTWTCTAAT...TTACCGCGGCKGCTGGCAC \
+    -m 215 -M 285 --discard-untrimmed \
+    -o ${sample}_R1_001_trimmed.fastq.gz -p ${sample}_R2_001_trimmed.fastq.gz \
+    ${sample}_R1_001.fastq.gz ${sample}_R2_001.fastq.gz \
+    >> cutadapt_primer_trimming_stats.txt 2>&1
+
+done
+
+#great! Now, let's see how we did
+paste samples <(grep "passing" cutadapt_primer_trimming_stats.txt | cut -f3 -d "(" | tr -d ")") <(grep "filtered" cutadapt_primer_trimming_stats.txt | cut -f3 -d "(" | tr -d ")")
+
+
+
+#this is just extra stuff. 
+cutadapt -a ^GTGCCAGCMGCCGCGGTAA...ATTAGAWACCCBDGTAGTCC \
+-A ^GGACTACHVGGGTWTCTAAT...TTACCGCGGCKGCTGGCAC \
+-m 215 -M 285 --discard-untrimmed \
+-o 601_00076630_ADCA_S13_R1_001_trimmed.fastq.gz -p 601_00076630_ADCA_S13_R2_001_trimmed.fastq.gz \
+601_00076630_ADCA_S13_R1_001.fastq.gz 601_00076630_ADCA_S13_R2_001.fastq.gz
+
+

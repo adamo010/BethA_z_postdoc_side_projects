@@ -1,0 +1,91 @@
+#Trimmomatic pipeline: 01.04.22
+#for Hogquist project: goal is to find a pathogen in placenta that is causing mouse fetal demise.
+
+#tutorial from https://datacarpentry.org/wrangling-genomics/03-trimming/index.html
+
+#Step 1: Open a terminal and log into Mesabi.
+#Step 2: Navigate to Hogquist_2021
+#Step 3: C= conda activate Hogquist_2021
+#Step 4: Move the Nextera adaptor sequences into the fastq diretory. They were (theoretically) installed with trimmomatic.
+cp ~/.miniconda3/pkgs/trimmomatic-0.38-0/share/trimmomatic-0.38-0/adapters/NexteraPE-PE.fa
+All right, I can't find them, so I'll just download the file and move it to MSI
+#Step 5. Run trimmomatic.
+trimmomatic PE 1168_1_Qiagen_S1_R1_001.fastq.gz 1168_1_Qiagen_S1_R2_001.fastq.gz \
+                1168_1_Qiagen_S1_R1.trim.fastq.gz 1168_1_Qiagen_S1_R1.untrim.fastq.gz \
+                1168_1_Qiagen_S1_R2.trim.fastq.gz 1168_1_Qiagen_S1_R2.untrim.fastq.gz \
+                SLIDINGWINDOW:4:20 MINLEN:25 ILLUMINACLIP:NexteraPE-PE.fa:2:40:15
+# we're running 1168_1_Qiagen_S1_R1/R2 first.
+# we get a couple of output files: .trim and .untrim (which I assume contains all the shit that got trimmed.)
+#SLINDINGWINDOW:4:20 means we will use a sliding window of size 4 that will remove bases if their phred score is below 20.
+#MINLEN:25 means that we will discard any reads that do not have at least 25 bases remaining after this trimming step  .
+#ILLUMINACLIP refers to the adaptor sequence file that we just downloaded.
+#HAHAHAHA from the tutorial: "These three additional numbers (2:40:15) tell Trimmimatic how to handle sequence matches 
+#to the Nextera adapters. A detailed explanation of how they work is advanced for this particular lesson. 
+#For now we will use these numbers as a default and recognize they are needed to for Trimmomatic to run properly."
+#All right, fucking classic.              
+
+#let's run it and see how it goes. Then write the commands for the other files.
+
+trimmomatic PE 1168_1_Zymo_S7_R1_001.fastq.gz 1168_1_Zymo_S7_R2_001.fastq.gz \
+                1168_1_Zymo_S7_R1.trim.fastq.gz 1168_1_Zymo_S7_R1.untrim.fastq.gz \
+                1168_1_Zymo_S7_R2.trim.fastq.gz 1168_1_Zymo_S7_R2.untrim.fastq.gz \
+                SLIDINGWINDOW:4:20 MINLEN:25 ILLUMINACLIP:NexteraPE-PE.fa:2:40:15
+
+trimmomatic PE 1168_2_Qiagen_S2_R1_001.fastq.gz 1168_2_Qiagen_S2_R2_001.fastq.gz \
+                1168_2_Qiagen_S2_R1.trim.fastq.gz 1168_2_Qiagen_S2_R1.untrim.fastq.gz \
+                1168_2_Qiagen_S2_R2.trim.fastq.gz 1168_2_Qiagen_S2_R2.untrim.fastq.gz \
+                SLIDINGWINDOW:4:20 MINLEN:25 ILLUMINACLIP:NexteraPE-PE.fa:2:40:15
+
+trimmomatic PE 1168_2_Zymo_S8_R1_001.fastq.gz 1168_2_Zymo_S8_R2_001.fastq.gz \
+                1168_2_Zymo_S8_R1.trim.fastq.gz 1168_2_Zymo_S8_R1.untrim.fastq.gz \
+                1168_2_Zymo_S8_R2.trim.fastq.gz 1168_2_Zymo_S8_R2.untrim.fastq.gz \
+                SLIDINGWINDOW:4:20 MINLEN:25 ILLUMINACLIP:NexteraPE-PE.fa:2:40:15
+
+trimmomatic PE 1995_1_Qiagen_S3_R1_001.fastq.gz 1995_1_Qiagen_S3_R2_001.fastq.gz \
+                1995_1_Qiagen_S3_R1.trim.fastq.gz 1995_1_Qiagen_S3_R1.untrim.fastq.gz \
+                1995_1_Qiagen_S3_R2.trim.fastq.gz 1995_1_Qiagen_S3_R2.untrim.fastq.gz \
+                SLIDINGWINDOW:4:20 MINLEN:25 ILLUMINACLIP:NexteraPE-PE.fa:2:40:15
+
+trimmomatic PE 1995_1_Zymo_S9_R1_001.fastq.gz 1995_1_Zymo_S9_R2_001.fastq.gz \
+                1995_1_Zymo_S9_R1.trim.fastq.gz 1995_1_Zymo_S9_R1.untrim.fastq.gz \
+                1995_1_Zymo_S9_R2.trim.fastq.gz 1995_1_Zymo_S9_R2.untrim.fastq.gz \
+                SLIDINGWINDOW:4:20 MINLEN:25 ILLUMINACLIP:NexteraPE-PE.fa:2:40:15
+
+trimmomatic PE 1995_2_Qiagen_S4_R1_001.fastq.gz 1995_2_Qiagen_S4_R2_001.fastq.gz \
+                1995_2_Qiagen_S4_R1.trim.fastq.gz 1995_2_Qiagen_S4_R1.untrim.fastq.gz \
+                1995_2_Qiagen_S4_R2.trim.fastq.gz 1995_2_Qiagen_S4_R2.untrim.fastq.gz \
+                SLIDINGWINDOW:4:20 MINLEN:25 ILLUMINACLIP:NexteraPE-PE.fa:2:40:15
+
+trimmomatic PE 1995_2_Zymo_S10_R1_001.fastq.gz 1995_2_Zymo_S10_R2_001.fastq.gz \
+                1995_2_Zymo_S10_R1.trim.fastq.gz 1995_2_Zymo_S10_R1.untrim.fastq.gz \
+                1995_2_Zymo_S10_R2.trim.fastq.gz 1995_2_Zymo_S10_R2.untrim.fastq.gz \
+                SLIDINGWINDOW:4:20 MINLEN:25 ILLUMINACLIP:NexteraPE-PE.fa:2:40:15
+
+trimmomatic PE Extraction_BLANK_1_Qiagen_S5_R1_001.fastq.gz Extraction_BLANK_1_Qiagen_S5_R2_001.fastq.gz \
+                Extraction_BLANK_1_Qiagen_S5_R1.trim.fastq.gz Extraction_BLANK_1_Qiagen_S5_R1.untrim.fastq.gz \
+                Extraction_BLANK_1_Qiagen_S5_R2.trim.fastq.gz Extraction_BLANK_1_Qiagen_S5_R2.untrim.fastq.gz \
+                SLIDINGWINDOW:4:20 MINLEN:25 ILLUMINACLIP:NexteraPE-PE.fa:2:40:15
+
+trimmomatic PE Extraction_BLANK_1_Zymo_S11_R1_001.fastq.gz Extraction_BLANK_1_Zymo_S11_R2_001.fastq.gz \
+                Extraction_BLANK_1_Zymo_S11_R1.trim.fastq.gz Extraction_BLANK_1_Zymo_S11_R1.untrim.fastq.gz \
+                Extraction_BLANK_1_Zymo_S11_R2.trim.fastq.gz Extraction_BLANK_1_Zymo_S11_R2.untrim.fastq.gz \
+                SLIDINGWINDOW:4:20 MINLEN:25 ILLUMINACLIP:NexteraPE-PE.fa:2:40:15
+
+trimmomatic PE Extraction_BLANK_2_Qiagen_S6_R1_001.fastq.gz Extraction_BLANK_2_Qiagen_S6_R2_001.fastq.gz \
+                Extraction_BLANK_2_Qiagen_S6_R1.trim.fastq.gz Extraction_BLANK_2_Qiagen_S6_R1.untrim.fastq.gz \
+                Extraction_BLANK_2_Qiagen_S6_R2.trim.fastq.gz Extraction_BLANK_2_Qiagen_S6_R2.untrim.fastq.gz \
+                SLIDINGWINDOW:4:20 MINLEN:25 ILLUMINACLIP:NexteraPE-PE.fa:2:40:15
+
+trimmomatic PE Extraction_BLANK_2_Zymo_S12_R1_001.fastq.gz Extraction_BLANK_2_Zymo_S12_R2_001.fastq.gz \
+                Extraction_BLANK_2_Zymo_S12_R1.trim.fastq.gz Extraction_BLANK_2_Zymo_S12_R1.untrim.fastq.gz \
+                Extraction_BLANK_2_Zymo_S12_R2.trim.fastq.gz Extraction_BLANK_2_Zymo_S12_R2.untrim.fastq.gz \
+                SLIDINGWINDOW:4:20 MINLEN:25 ILLUMINACLIP:NexteraPE-PE.fa:2:40:15
+
+######AH GOOD: Process killed for exceeding 15 minutes of user CPU time on a login node. (PID: 1863465 Name: python)
+
+
+
+
+
+
+

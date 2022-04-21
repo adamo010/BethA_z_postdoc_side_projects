@@ -1,0 +1,23 @@
+#!/bin/bash -l
+#PBS -l walltime=24:00:00,nodes=1:ppn=12,mem=32GB
+#PBS -m abe
+#PBS -M adamo010@umn.edu
+#PBS -q blekhman
+
+module load kallisto
+
+kallisto quant -i ~/Mayo_RNAseq_project/human_transcriptome.idx -b 100 -o ~/Mayo_RNAseq_project/Apc_tg_il23R_Ho_SN_1_S1_output /home/blekhman/data_release/umgc/novaseq/200401_A00223_0352_AH75N7DSXY/Blekhman_Project_037/Apc_tg_il23R_Ho_SN_1_S1_R1_001.fastq.gz /home/blekhman/data_release/umgc/novaseq/200401_A00223_0352_AH75N7DSXY/Blekhman_Project_037/Apc_tg_il23R_Ho_SN_1_S1_R2_001.fastq.gz
+
+kallisto quant -i ~/Mayo_RNAseq_project/human_transcriptome.idx -b 100 -o ~/Mayo_RNAseq_project/Apc_tg_il23R_Ho_SN_13_S12_output /home/blekhman/data_release/umgc/novaseq/200401_A00223_0352_AH75N7DSXY/Blekhman_Project_037/Apc_tg_il23R_Ho_SN_13_S12_R1_001.fastq.gz /home/blekhman/data_release/umgc/novaseq/200401_A00223_0352_AH75N7DSXY/Blekhman_Project_037/Apc_tg_il23R_Ho_SN_13_S12_R2_001.fastq.gz
+
+kallisto quant -i ~/Mayo_RNAseq_project/human_transcriptome.idx -b 100 -o ~/Mayo_RNAseq_project/Apc_tg_il23R_Ho_SN_5_S5_output /home/blekhman/data_release/umgc/novaseq/200401_A00223_0352_AH75N7DSXY/Blekhman_Project_037/Apc_tg_il23R_Ho_SN_5_S5_R1_001.fastq.gz /home/blekhman/data_release/umgc/novaseq/200401_A00223_0352_AH75N7DSXY/Blekhman_Project_037/Apc_tg_il23R_Ho_SN_5_S5_R2_001.fastq.gz
+
+kallisto quant -i ~/Mayo_RNAseq_project/human_transcriptome.idx -b 100 -o ~/Mayo_RNAseq_project/Apc_tg_il23R_Ho_SN_9_S9_output /home/blekhman/data_release/umgc/novaseq/200401_A00223_0352_AH75N7DSXY/Blekhman_Project_037/Apc_tg_il23R_Ho_SN_9_S9_R1_001.fastq.gz /home/blekhman/data_release/umgc/novaseq/200401_A00223_0352_AH75N7DSXY/Blekhman_Project_037/Apc_tg_il23R_Ho_SN_9_S9_R2_001.fastq.gz
+
+kallisto quant -i ~/Mayo_RNAseq_project/human_transcriptome.idx -b 100 -o ~/Mayo_RNAseq_project/Apc_tg_il23R_Ho_SP_10_S31_output /home/blekhman/data_release/umgc/novaseq/200401_A00223_0352_AH75N7DSXY/Blekhman_Project_037/Apc_tg_il23R_Ho_SP_10_S31_R1_001.fastq.gz /home/blekhman/data_release/umgc/novaseq/200401_A00223_0352_AH75N7DSXY/Blekhman_Project_037/Apc_tg_il23R_Ho_SP_10_S31_R2_001.fastq.gz
+
+kallisto quant -i ~/Mayo_RNAseq_project/human_transcriptome.idx -b 100 -o ~/Mayo_RNAseq_project/Apc_tg_il23R_Ho_SP_14_S13_output /home/blekhman/data_release/umgc/novaseq/200401_A00223_0352_AH75N7DSXY/Blekhman_Project_037/Apc_tg_il23R_Ho_SP_14_S13_R1_001.fastq.gz /home/blekhman/data_release/umgc/novaseq/200401_A00223_0352_AH75N7DSXY/Blekhman_Project_037/Apc_tg_il23R_Ho_SP_14_S13_R2_001.fastq.gz
+
+kallisto quant -i ~/Mayo_RNAseq_project/human_transcriptome.idx -b 100 -o ~/Mayo_RNAseq_project/Apc_tg_il23R_Ho_SP_2_S2_output /home/blekhman/data_release/umgc/novaseq/200401_A00223_0352_AH75N7DSXY/Blekhman_Project_037/Apc_tg_il23R_Ho_SP_2_S2_R1_001.fastq.gz /home/blekhman/data_release/umgc/novaseq/200401_A00223_0352_AH75N7DSXY/Blekhman_Project_037/Apc_tg_il23R_Ho_SP_2_S2_R2_001.fastq.gz
+
+kallisto quant -i ~/Mayo_RNAseq_project/human_transcriptome.idx -b 100 -o ~/Mayo_RNAseq_project/Apc_tg_il23R_Ho_SP_6_S6_output /home/blekhman/data_release/umgc/novaseq/200401_A00223_0352_AH75N7DSXY/Blekhman_Project_037/Apc_tg_il23R_Ho_SP_6_S6_R1_001.fastq.gz /home/blekhman/data_release/umgc/novaseq/200401_A00223_0352_AH75N7DSXY/Blekhman_Project_037/Apc_tg_il23R_Ho_SP_6_S6_R2_001.fastq.gz

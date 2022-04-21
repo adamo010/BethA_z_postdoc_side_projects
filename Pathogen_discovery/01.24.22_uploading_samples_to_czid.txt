@@ -1,0 +1,58 @@
+czid short-read-mngs upload-sample  
+  -p 'Project Name'  
+  -s 'Sample Name'  
+  --metadata-csv your_metadata.csv  
+  -m 'Metadata Name=Metadata Value'  
+  your_sample_R1.fastq.gz your_sample_R2.fastq.gz
+  
+
+#czid short-read-mngs upload-sample -p "Hogquist_mouse_placenta_pathogen_project" -s 1168_1_Qiagen_S1 --metadata-csv Hogquist_seq_pilot_metadata_V2.csv Sequencing_data_Hogquist_026/1168_1_Qiagen_S1_R1_001.fastq.gz Sequencing_data_Hogquist_026/1168_1_Qiagen_S1_R2_001.fastq.gz 
+#czid short-read-mngs upload-sample -p "Hogquist_mouse_placenta_pathogen_project" -s 1168_1_Zymo_S7 --metadata-csv Hogquist_seq_pilot_metadata_V2.csv Sequencing_data_Hogquist_026/1168_1_Zymo_S7_R1_001.fastq.gz Sequencing_data_Hogquist_026/1168_1_Zymo_S7_R2_001.fastq.gz 
+#czid short-read-mngs upload-sample -p "Hogquist_mouse_placenta_pathogen_project" -s 1168_2_Qiagen_S2 --metadata-csv Hogquist_seq_pilot_metadata_V2.csv Sequencing_data_Hogquist_026/1168_2_Qiagen_S2_R1_001.fastq.gz Sequencing_data_Hogquist_026/1168_2_Qiagen_S2_R2_001.fastq.gz 
+#czid short-read-mngs upload-sample -p "Hogquist_mouse_placenta_pathogen_project" -s 1168_2_Zymo_S8 --metadata-csv Hogquist_seq_pilot_metadata_V2.csv Sequencing_data_Hogquist_026/1168_2_Zymo_S8_R1_001.fastq.gz Sequencing_data_Hogquist_026/1168_2_Zymo_S8_R2_001.fastq.gz 
+#czid short-read-mngs upload-sample -p "Hogquist_mouse_placenta_pathogen_project" -s 1995_1_Qiagen_S3 --metadata-csv Hogquist_seq_pilot_metadata_V2.csv Sequencing_data_Hogquist_026/1995_1_Qiagen_S3_R1_001.fastq.gz Sequencing_data_Hogquist_026/1995_1_Qiagen_S3_R2_001.fastq.gz 
+#czid short-read-mngs upload-sample -p "Hogquist_mouse_placenta_pathogen_project" -s 1995_1_Zymo_S9 --metadata-csv Hogquist_seq_pilot_metadata_V2.csv Sequencing_data_Hogquist_026/1995_1_Zymo_S9_R1_001.fastq.gz Sequencing_data_Hogquist_026/1995_1_Zymo_S9_R2_001.fastq.gz 
+#czid short-read-mngs upload-sample -p "Hogquist_mouse_placenta_pathogen_project" -s 1995_2_Qiagen_S4 --metadata-csv Hogquist_seq_pilot_metadata_V2.csv Sequencing_data_Hogquist_026/1995_2_Qiagen_S4_R1_001.fastq.gz Sequencing_data_Hogquist_026/1995_2_Qiagen_S4_R2_001.fastq.gz 
+#czid short-read-mngs upload-sample -p "Hogquist_mouse_placenta_pathogen_project" -s 1995_2_Zymo_S10 --metadata-csv Hogquist_seq_pilot_metadata_V2.csv Sequencing_data_Hogquist_026/1995_2_Zymo_S10_R1_001.fastq.gz Sequencing_data_Hogquist_026/1995_2_Zymo_S10_R2_001.fastq.gz 
+#czid short-read-mngs upload-sample -p "Hogquist_mouse_placenta_pathogen_project" -s Extraction_BLANK_1_Qiagen_S5 --metadata-csv Hogquist_seq_pilot_metadata_V2.csv Sequencing_data_Hogquist_026/Extraction_BLANK_1_Qiagen_S5_R1_001.fastq.gz Sequencing_data_Hogquist_026/Extraction_BLANK_1_Qiagen_S5_R2_001.fastq.gz 
+#czid short-read-mngs upload-sample -p "Hogquist_mouse_placenta_pathogen_project" -s Extraction_BLANK_1_Zymo_S11 --metadata-csv Hogquist_seq_pilot_metadata_V2.csv Sequencing_data_Hogquist_026/Extraction_BLANK_1_Zymo_S11_R1_001.fastq.gz Sequencing_data_Hogquist_026/Extraction_BLANK_1_Zymo_S11_R2_001.fastq.gz 
+#czid short-read-mngs upload-sample -p "Hogquist_mouse_placenta_pathogen_project" -s Extraction_BLANK_2_Qiagen_S6 --metadata-csv Hogquist_seq_pilot_metadata_V2.csv Sequencing_data_Hogquist_026/Extraction_BLANK_2_Qiagen_S6_R1_001.fastq.gz Sequencing_data_Hogquist_026/Extraction_BLANK_2_Qiagen_S6_R2_001.fastq.gz 
+#czid short-read-mngs upload-sample -p "Hogquist_mouse_placenta_pathogen_project" -s Extraction_BLANK_2_Zymo_S12 --metadata-csv Hogquist_seq_pilot_metadata_V2.csv Sequencing_data_Hogquist_026/Extraction_BLANK_2_Zymo_S12_R1_001.fastq.gz Sequencing_data_Hogquist_026/Extraction_BLANK_2_Zymo_S12_R2_001.fastq.gz 
+
+Redos:
+czid short-read-mngs upload-sample -p "Hogquist_mouse_placenta_pathogen_project" -s 1995_2_Qiagen_S4 --metadata-csv Hogquist_seq_pilot_metadata_V2.csv Sequencing_data_Hogquist_026/1995_2_Qiagen_S4_R1_001.fastq.gz Sequencing_data_Hogquist_026/1995_2_Qiagen_S4_R2_001.fastq.gz 
+czid short-read-mngs upload-sample -p "Hogquist_mouse_placenta_pathogen_project" -s 1168_1_Zymo_S7 --metadata-csv Hogquist_seq_pilot_metadata_V2.csv Sequencing_data_Hogquist_026/1168_1_Zymo_S7_R1_001.fastq.gz Sequencing_data_Hogquist_026/1168_1_Zymo_S7_R2_001.fastq.gz 
+
+#czid short-read-mngs upload-sample -p "Hogquist_mouse_placenta_pathogen_project" -s 1168_1_Qiagen_S1 --metadata-csv Hogquist_seq_pilot_metadata_V2.csv Sequencing_data_Hogquist_026/1168_1_Qiagen_S1_R1_001.fastq.gz Sequencing_data_Hogquist_026/1168_1_Qiagen_S1_R2_001.fastq.gz 
+
+
+#####file list
+#Sample 1: 1168_1_Qiagen_S1: 1168_1_Qiagen_S1_R1.trim.fastq.gz 1168_1_Qiagen_S1_R1.trim.fastq.gz \
+#Sample 2: 1168_1_Zymo_S7: 1168_1_Zymo_S7_R1_001.fastq.gz 1168_1_Zymo_S7_R2_001.fastq.gz \
+#Sample 3: 1168_2_Qiagen_S2: 1168_2_Qiagen_S2_R1_001.fastq.gz 1168_2_Qiagen_S2_R2_001.fastq.gz \
+#Sample 4: 1168_2_Zymo_S8: 1168_2_Zymo_S8_R1_001.fastq.gz 1168_2_Zymo_S8_R2_001.fastq.gz \
+#Sample 5: 1995_1_Qiagen_S3: 1995_1_Qiagen_S3_R1_001.fastq.gz 1995_1_Qiagen_S3_R2_001.fastq.gz \
+#Sample 6: 1995_1_Zymo_S9: 1995_1_Zymo_S9_R1_001.fastq.gz 1995_1_Zymo_S9_R2_001.fastq.gz \
+#Sample 7: 1995_2_Qiagen_S4: 1995_2_Qiagen_S4_R1_001.fastq.gz 1995_2_Qiagen_S4_R2_001.fastq.gz \
+#Sample 8: 1995_2_Zymo_S10: 1995_2_Zymo_S10_R1_001.fastq.gz 1995_2_Zymo_S10_R2_001.fastq.gz \
+#Sample 9: Extraction_BLANK_1_Qiagen_S5: Extraction_BLANK_1_Qiagen_S5_R1_001.fastq.gz Extraction_BLANK_1_Qiagen_S5_R2_001.fastq.gz \
+#Sample 10: Extraction_BLANK_1_Zymo_S11: Extraction_BLANK_1_Zymo_S11_R1_001.fastq.gz Extraction_BLANK_1_Zymo_S11_R2_001.fastq.gz \
+#Sample 11: Extraction_BLANK_2_Qiagen_S6: Extraction_BLANK_2_Qiagen_S6_R1_001.fastq.gz Extraction_BLANK_2_Qiagen_S6_R2_001.fastq.gz \
+#Sample 12: Extraction_BLANK_2_Zymo_S12: Extraction_BLANK_2_Zymo_S12_R1_001.fastq.gz Extraction_BLANK_2_Zymo_S12_R2_001.fastq.gz \
+
+####another round of uploads:
+#czid short-read-mngs upload-sample -p "Hogquist_mouse_placenta_pathogen_project" -s hostfree_1168_1_Qiagen_S1 --metadata-csv Hogquist_seq_pilot_metadata_hostfree.csv Sequencing_data_Hogquist_026/1168_1_Qiagen_S1_host_removed_R1.fastq.gz Sequencing_data_Hogquist_026/1168_1_Qiagen_S1_host_removed_R2.fastq.gz
+#czid short-read-mngs upload-sample -p "Hogquist_mouse_placenta_pathogen_project" -s hostfree_1168_2_Qiagen_S2 --metadata-csv Hogquist_seq_pilot_metadata_hostfree.csv Sequencing_data_Hogquist_026/1168_2_Qiagen_S2_host_removed_R1.fastq.gz Sequencing_data_Hogquist_026/1168_2_Qiagen_S2_host_removed_R2.fastq.gz 
+#czid short-read-mngs upload-sample -p "Hogquist_mouse_placenta_pathogen_project" -s hostfree_1995_1_Qiagen_S3 --metadata-csv Hogquist_seq_pilot_metadata_hostfree.csv Sequencing_data_Hogquist_026/1995_1_Qiagen_S3_host_removed_R1.fastq.gz Sequencing_data_Hogquist_026/1995_1_Qiagen_S3_host_removed_R2.fastq.gz 
+#czid short-read-mngs upload-sample -p "Hogquist_mouse_placenta_pathogen_project" -s hostfree_1995_2_Qiagen_S4 --metadata-csv Hogquist_seq_pilot_metadata_hostfree.csv Sequencing_data_Hogquist_026/1995_2_Qiagen_S4_host_removed_R1.fastq.gz Sequencing_data_Hogquist_026/1995_2_Qiagen_S4_host_removed_R2.fastq.gz 
+#czid short-read-mngs upload-sample -p "Hogquist_mouse_placenta_pathogen_project" -s hostfree_Extraction_BLANK_1_Qiagen_S5 --metadata-csv Hogquist_seq_pilot_metadata_hostfree.csv Sequencing_data_Hogquist_026/Extraction_BLANK_1_Qiagen_S5_host_removed_R1.fastq.gz Sequencing_data_Hogquist_026/Extraction_BLANK_1_Qiagen_S5_host_removed_R2.fastq.gz 
+#czid short-read-mngs upload-sample -p "Hogquist_mouse_placenta_pathogen_project" -s hostfree_Extraction_BLANK_2_Qiagen_S6 --metadata-csv Hogquist_seq_pilot_metadata_hostfree.csv Sequencing_data_Hogquist_026/Extraction_BLANK_2_Qiagen_S6_host_removed_R1.fastq.gz Sequencing_data_Hogquist_026/Extraction_BLANK_2_Qiagen_S6_host_removed_R2.fastq.gz 
+#czid short-read-mngs upload-sample -p "Hogquist_mouse_placenta_pathogen_project" -s hostfree_1168_1_Zymo_S7 --metadata-csv Hogquist_seq_pilot_metadata_hostfree.csv Sequencing_data_Hogquist_026/1168_1_Zymo_S7_host_removed_R1.fastq.gz Sequencing_data_Hogquist_026/1168_1_Zymo_S7_host_removed_R2.fastq.gz 
+#czid short-read-mngs upload-sample -p "Hogquist_mouse_placenta_pathogen_project" -s hostfree_1168_2_Zymo_S8 --metadata-csv Hogquist_seq_pilot_metadata_hostfree.csv Sequencing_data_Hogquist_026/1168_2_Zymo_S8_host_removed_R1.fastq.gz Sequencing_data_Hogquist_026/1168_2_Zymo_S8_host_removed_R2.fastq.gz 
+#czid short-read-mngs upload-sample -p "Hogquist_mouse_placenta_pathogen_project" -s hostfree_1995_1_Zymo_S9 --metadata-csv Hogquist_seq_pilot_metadata_hostfree.csv Sequencing_data_Hogquist_026/1995_1_Zymo_S9_host_removed_R1.fastq.gz Sequencing_data_Hogquist_026/1995_1_Zymo_S9_host_removed_R2.fastq.gz 
+#czid short-read-mngs upload-sample -p "Hogquist_mouse_placenta_pathogen_project" -s hostfree_1995_2_Zymo_S10 --metadata-csv Hogquist_seq_pilot_metadata_hostfree.csv Sequencing_data_Hogquist_026/1995_2_Zymo_S10_host_removed_R1.fastq.gz Sequencing_data_Hogquist_026/1995_2_Zymo_S10_host_removed_R2.fastq.gz 
+#czid short-read-mngs upload-sample -p "Hogquist_mouse_placenta_pathogen_project" -s hostfree_Extraction_BLANK_1_Zymo_S11 --metadata-csv Hogquist_seq_pilot_metadata_hostfree.csv Sequencing_data_Hogquist_026/Extraction_BLANK_1_Zymo_S11_host_removed_R1.fastq.gz Sequencing_data_Hogquist_026/Extraction_BLANK_1_Zymo_S11_host_removed_R2.fastq.gz
+#czid short-read-mngs upload-sample -p "Hogquist_mouse_placenta_pathogen_project" -s hostfree_Extraction_BLANK_2_Zymo_S12 --metadata-csv Hogquist_seq_pilot_metadata_hostfree.csv Sequencing_data_Hogquist_026/Extraction_BLANK_2_Zymo_S12_host_removed_R1.fastq.gz Sequencing_data_Hogquist_026/Extraction_BLANK_2_Zymo_S12_host_removed_R2.fastq.gz 
+
+
+  

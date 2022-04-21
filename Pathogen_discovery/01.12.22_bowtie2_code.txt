@@ -1,0 +1,99 @@
+##Bowtie2 pipeline: 01.12.22
+#for Hogquist project: goal is to find a pathogen in placenta that is causing mouse fetal demise.
+
+#use tutorial from https://www.metagenomics.wiki/tools/short-read/remove-host-sequences
+
+#Step 1: Open a terminal and log into Mesabi.
+#Step 2: Navigate to Hogquist_2021
+#Step 3: C= conda activate Hogquist_2021
+#Step 4: install bowtie: C= conda install -c bioconda bowtie2
+#Step 5: download the mouse genome
+wget https://genome-idx.s3.amazonaws.com/bt/GRCm39.zip
+unzip GRCm39.zip
+
+#step 6: run bowtie2
+bowtie2 -p 8 -x GRCm39 -1 1168_1_Qiagen_S1_R1.trim.fastq.gz -2 1168_1_Qiagen_S1_R2.trim.fastq.gz --un-conc-gz 1168_1_Qiagen_S1_host_removed > 1168_1_Qiagen_S1_mapped_and_unmapped.sam
+#step 7: rename samples 
+mv 1168_1_Qiagen_S1_host_removed.1 1168_1_Qiagen_S1_host_removed_R1.fastq.gz
+mv 1168_1_Qiagen_S1_host_removed.2 1168_1_Qiagen_S1_host_removed_R2.fastq.gz
+
+#out of this, we get a couple of output files (host_removed_R1.fastq.gz, host_removed_R2.fastq.gz, and a .sam file that contains all removed reads. we may want to delete this,
+#depending on how big it is.)
+
+#generic script:
+bowtie2 -x GRCm39 -1 SAMPLE_R1.trim.fastq.gz -2 SAMPLE_R2.trim.fastq.gz --un-conc-gz SAMPLE_host_removed > SAMPLE_mapped_and_unmapped.sam
+mv SAMPLE_host_removed.1 SAMPLE_host_removed_R1.fastq.gz
+mv SAMPLE_host_removed.2 SAMPLE_host_removed_R2.fastq.gz
+
+#Sample 2:
+bowtie2 -x GRCm39 -1 1168_1_Zymo_S7_R1.trim.fastq.gz -2 1168_1_Zymo_S7_R2.trim.fastq.gz --un-conc-gz 1168_1_Zymo_S7_host_removed > 1168_1_Zymo_S7_mapped_and_unmapped.sam
+mv 1168_1_Zymo_S7_host_removed.1 1168_1_Zymo_S7_host_removed_R1.fastq.gz
+mv 1168_1_Zymo_S7_host_removed.2 1168_1_Zymo_S7_host_removed_R2.fastq.gz
+
+#Sample 3:
+bowtie2 -x GRCm39 -1 1168_2_Qiagen_S2_R1.trim.fastq.gz -2 1168_2_Qiagen_S2_R2.trim.fastq.gz --un-conc-gz 1168_2_Qiagen_S2_host_removed > 1168_2_Qiagen_S2_mapped_and_unmapped.sam
+mv 1168_2_Qiagen_S2_host_removed.1 1168_2_Qiagen_S2_host_removed_R1.fastq.gz
+mv 1168_2_Qiagen_S2_host_removed.2 1168_2_Qiagen_S2_host_removed_R2.fastq.gz
+
+#Sample 4:
+bowtie2 -x GRCm39 -1 1168_2_Zymo_S8_R1.trim.fastq.gz -2 1168_2_Zymo_S8_R2.trim.fastq.gz --un-conc-gz 1168_2_Zymo_S8_host_removed > 1168_2_Zymo_S8_mapped_and_unmapped.sam
+mv 1168_2_Zymo_S8_host_removed.1 1168_2_Zymo_S8_host_removed_R1.fastq.gz
+mv 1168_2_Zymo_S8_host_removed.2 1168_2_Zymo_S8_host_removed_R2.fastq.gz
+
+#Sample 5:
+bowtie2 -x GRCm39 -1 1995_1_Qiagen_S3_R1.trim.fastq.gz -2 1995_1_Qiagen_S3_R2.trim.fastq.gz --un-conc-gz 1995_1_Qiagen_S3_host_removed > 1995_1_Qiagen_S3_mapped_and_unmapped.sam
+mv 1995_1_Qiagen_S3_host_removed.1 1995_1_Qiagen_S3_host_removed_R1.fastq.gz
+mv 1995_1_Qiagen_S3_host_removed.2 1995_1_Qiagen_S3_host_removed_R2.fastq.gz
+
+#Sample 6:
+bowtie2 -x GRCm39 -1 1995_1_Zymo_S9_R1.trim.fastq.gz -2 1995_1_Zymo_S9_R2.trim.fastq.gz --un-conc-gz 1995_1_Zymo_S9_host_removed > 1995_1_Zymo_S9_mapped_and_unmapped.sam
+mv 1995_1_Zymo_S9_host_removed.1 1995_1_Zymo_S9_host_removed_R1.fastq.gz
+mv 1995_1_Zymo_S9_host_removed.2 1995_1_Zymo_S9_host_removed_R2.fastq.gz
+
+#Sample 7:
+bowtie2 -x GRCm39 -1 1995_2_Qiagen_S4_R1.trim.fastq.gz -2 1995_2_Qiagen_S4_R2.trim.fastq.gz --un-conc-gz 1995_2_Qiagen_S4_host_removed > 1995_2_Qiagen_S4_mapped_and_unmapped.sam
+mv 1995_2_Qiagen_S4_host_removed.1 1995_2_Qiagen_S4_host_removed_R1.fastq.gz
+mv 1995_2_Qiagen_S4_host_removed.2 1995_2_Qiagen_S4_host_removed_R2.fastq.gz
+
+#Sample 8:
+bowtie2 -x GRCm39 -1 1995_2_Zymo_S10_R1.trim.fastq.gz -2 1995_2_Zymo_S10_R2.trim.fastq.gz --un-conc-gz 1995_2_Zymo_S10_host_removed > 1995_2_Zymo_S10_mapped_and_unmapped.sam
+mv 1995_2_Zymo_S10_host_removed.1 1995_2_Zymo_S10_host_removed_R1.fastq.gz
+mv 1995_2_Zymo_S10_host_removed.2 1995_2_Zymo_S10_host_removed_R2.fastq.gz
+
+#Sample 9:
+bowtie2 -x GRCm39 -1 Extraction_BLANK_1_Qiagen_S5_R1.trim.fastq.gz -2 Extraction_BLANK_1_Qiagen_S5_R2.trim.fastq.gz --un-conc-gz Extraction_BLANK_1_Qiagen_S5_host_removed > Extraction_BLANK_1_Qiagen_S5_mapped_and_unmapped.sam
+mv Extraction_BLANK_1_Qiagen_S5_host_removed.1 Extraction_BLANK_1_Qiagen_S5_host_removed_R1.fastq.gz
+mv Extraction_BLANK_1_Qiagen_S5_host_removed.2 Extraction_BLANK_1_Qiagen_S5_host_removed_R2.fastq.gz
+
+#Sample 10:
+bowtie2 -x GRCm39 -1 Extraction_BLANK_1_Zymo_S11_R1.trim.fastq.gz -2 Extraction_BLANK_1_Zymo_S11_R2.trim.fastq.gz --un-conc-gz Extraction_BLANK_1_Zymo_S11_host_removed > Extraction_BLANK_1_Zymo_S11_mapped_and_unmapped.sam
+mv Extraction_BLANK_1_Zymo_S11_host_removed.1 Extraction_BLANK_1_Zymo_S11_host_removed_R1.fastq.gz
+mv Extraction_BLANK_1_Zymo_S11_host_removed.2 Extraction_BLANK_1_Zymo_S11_host_removed_R2.fastq.gz
+
+#Sample 11:
+bowtie2 -x GRCm39 -1 Extraction_BLANK_2_Qiagen_S6_R1.trim.fastq.gz -2 Extraction_BLANK_2_Qiagen_S6_R2.trim.fastq.gz --un-conc-gz Extraction_BLANK_2_Qiagen_S6_host_removed > Extraction_BLANK_2_Qiagen_S6_mapped_and_unmapped.sam
+mv Extraction_BLANK_2_Qiagen_S6_host_removed.1 Extraction_BLANK_2_Qiagen_S6_host_removed_R1.fastq.gz
+mv Extraction_BLANK_2_Qiagen_S6_host_removed.2 Extraction_BLANK_2_Qiagen_S6_host_removed_R2.fastq.gz
+
+#Sample 12:
+bowtie2 -x GRCm39 -1 Extraction_BLANK_2_Zymo_S12_R1.trim.fastq.gz -2 Extraction_BLANK_2_Zymo_S12_R2.trim.fastq.gz --un-conc-gz Extraction_BLANK_2_Zymo_S12_host_removed > Extraction_BLANK_2_Zymo_S12_mapped_and_unmapped.sam
+mv Extraction_BLANK_2_Zymo_S12_host_removed.1 Extraction_BLANK_2_Zymo_S12_host_removed_R1.fastq.gz
+mv Extraction_BLANK_2_Zymo_S12_host_removed.2 Extraction_BLANK_2_Zymo_S12_host_removed_R2.fastq.gz
+
+
+
+#####file list
+#Sample 1: 1168_1_Qiagen_S1: 1168_1_Qiagen_S1_R1.trim.fastq.gz 1168_1_Qiagen_S1_R1.trim.fastq.gz \
+#Sample 2: 1168_1_Zymo_S7: 1168_1_Zymo_S7_R1_001.fastq.gz 1168_1_Zymo_S7_R2_001.fastq.gz \
+#Sample 3: 1168_2_Qiagen_S2: 1168_2_Qiagen_S2_R1_001.fastq.gz 1168_2_Qiagen_S2_R2_001.fastq.gz \
+#Sample 4: 1168_2_Zymo_S8: 1168_2_Zymo_S8_R1_001.fastq.gz 1168_2_Zymo_S8_R2_001.fastq.gz \
+#Sample 5: 1995_1_Qiagen_S3: 1995_1_Qiagen_S3_R1_001.fastq.gz 1995_1_Qiagen_S3_R2_001.fastq.gz \
+#Sample 6: 1995_1_Zymo_S9: 1995_1_Zymo_S9_R1_001.fastq.gz 1995_1_Zymo_S9_R2_001.fastq.gz \
+#Sample 7: 1995_2_Qiagen_S4: 1995_2_Qiagen_S4_R1_001.fastq.gz 1995_2_Qiagen_S4_R2_001.fastq.gz \
+#Sample 8: 1995_2_Zymo_S10: 1995_2_Zymo_S10_R1_001.fastq.gz 1995_2_Zymo_S10_R2_001.fastq.gz \
+#Sample 9: Extraction_BLANK_1_Qiagen_S5: Extraction_BLANK_1_Qiagen_S5_R1_001.fastq.gz Extraction_BLANK_1_Qiagen_S5_R2_001.fastq.gz \
+#Sample 10: Extraction_BLANK_1_Zymo_S11: Extraction_BLANK_1_Zymo_S11_R1_001.fastq.gz Extraction_BLANK_1_Zymo_S11_R2_001.fastq.gz \
+#Sample 11: Extraction_BLANK_2_Qiagen_S6: Extraction_BLANK_2_Qiagen_S6_R1_001.fastq.gz Extraction_BLANK_2_Qiagen_S6_R2_001.fastq.gz \
+#Sample 12: Extraction_BLANK_2_Zymo_S12: Extraction_BLANK_2_Zymo_S12_R1_001.fastq.gz Extraction_BLANK_2_Zymo_S12_R2_001.fastq.gz \
+
+
